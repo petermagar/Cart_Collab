@@ -6,19 +6,21 @@
 //
 
 import SwiftUI
-
-struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
-    }
+class AppVariable: ObservableObject {
+    @Published var selectedTab: Int = 0
 }
 
+struct ContentView: View {
+    
+    var body: some View {
+        
+        BottomBar(
+            AnyView(CartListView()),
+            AnyView(SigninView())
+        )            
+        .environmentObject(AppVariable())
+    }
+}
 #Preview {
     ContentView()
 }
