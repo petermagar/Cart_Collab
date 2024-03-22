@@ -23,12 +23,12 @@ struct Card: View {
 
     init(
         cornerRadius : CGFloat = 16,
+        elevation : CGFloat = 5,
         width : CGFloat = CGFloat.infinity,
         height : CGFloat = 140,
         color : Color = Color(.white),
         focusColor : Color? = nil,
-        elevation : CGFloat = 5,
-
+        
         views : @escaping () -> AnyView,
         click : @escaping () -> Void = {},
         longClick : @escaping () -> Void = {}
